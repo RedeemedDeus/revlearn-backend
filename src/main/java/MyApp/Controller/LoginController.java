@@ -1,8 +1,10 @@
 package MyApp.Controller;
 
+import MyApp.Exceptions.UnauthorizedUserException;
 import MyApp.Model.Login;
 import MyApp.Service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,5 +35,20 @@ public class LoginController {
     @GetMapping("login")
     public List<Login> getAllLogin() {
         return loginService.getAllLogin();
+    }
+
+
+    /**
+     * 2. As a user I should be able to login in to my account
+     * POST localhost:9000/login
+     */
+    @PostMapping("login")
+    public Object login(@RequestBody Login login) throws UnauthorizedUserException{
+        return loginService.login(login);
+    }
+
+    @ExceptionHandler(UnauthorizedUserException.class)
+    @ResponseStatus(value = HttpStatus.UNAUTHORIZED, reason = "invalid login credentials, please try again!")
+    public void handleUnauthorized(){
     }
 }
