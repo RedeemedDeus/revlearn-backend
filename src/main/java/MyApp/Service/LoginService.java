@@ -48,9 +48,6 @@ public class LoginService {
         }
 
         if(login.getUser_type().equals("student")){
-            Random random = new Random();
-            String randomCode = String.valueOf(random.nextInt(9999999));
-            login.setPassword(randomCode);
 
             Student student = new Student();
             student = studentRepository.save(student);

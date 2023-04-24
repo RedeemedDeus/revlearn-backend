@@ -34,8 +34,7 @@ public class EmailSenderService {
         String senderName = "RevLearn";
         String subject = "Welcome to RevLearn!";
         String content = "Welcome to RevLearn!<br>"
-                + "Please login with the verfication password below and update your password in your Profile.<br>"
-                + "Your temporary password is: [[password]] <br>"
+                + "Please login and complete your Profile information.<br>"
                 + "Thank you,<br>"
                 + "RevLearn Team.";
 
@@ -45,8 +44,6 @@ public class EmailSenderService {
         helper.setFrom(fromAddress, senderName);
         helper.setTo(toAddress);
         helper.setSubject(subject);
-
-        content = content.replace("[[password]]", login.getPassword());
 
        helper.setText(content, true);
        mailSender.send(message);
