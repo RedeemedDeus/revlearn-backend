@@ -19,5 +19,7 @@ public class Gradebook {
     @Column
     private String quizName;
     @Column
+    private int courseId;
+    @Column
     private int grades;
 }

@@ -58,6 +58,7 @@ CREATE TABLE gradebook (
   grade_id INTEGER PRIMARY KEY AUTO_INCREMENT,
   quiz_name VARCHAR(255),
   student_id INTEGER,
+  course_id INTEGER,
   grades INTEGER
 );
 
