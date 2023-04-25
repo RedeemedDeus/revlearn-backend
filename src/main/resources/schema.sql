@@ -32,22 +32,6 @@ CREATE TABLE courses (
   cost DOUBLE
 );
 
--- Table for gradebook
-CREATE TABLE gradebook (
-  grade_id INTEGER PRIMARY KEY AUTO_INCREMENT,
-  student_id INTEGER,
-  teacher_id INTEGER,
-  grades INTEGER
-);
-
--- Table for forum posts
-CREATE TABLE forum (
-  post_id INTEGER PRIMARY KEY AUTO_INCREMENT,
-  course_id INTEGER ,
-  user_id INTEGER ,
-  text_body LONGTEXT,
-  created_at TIMESTAMP
-);
 
 CREATE TABLE students_courses (
   course_id INT NOT NULL,
@@ -67,6 +51,23 @@ CREATE TABLE quiz (
   answer4 VARCHAR(255) NOT NULL,
   answer CHAR(1) NOT NULL,
   course_id INTEGER NOT NULL
-
 );
 
+-- Table for gradebook
+CREATE TABLE gradebook (
+  grade_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  quiz_name VARCHAR(255),
+  student_id INTEGER,
+  grades INTEGER
+);
+
+
+-- Table for forum posts
+CREATE TABLE forum (
+  post_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  course_id INTEGER ,
+  user_id INTEGER ,
+  text_body LONGTEXT,
+  created_at TIMESTAMP,
+  Foreign KEY (Course_id) references courses(course_id)
+);

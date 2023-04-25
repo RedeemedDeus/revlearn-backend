@@ -15,6 +15,8 @@ public class Quiz {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long quizId;
     @Column
+    public Long courseId;
+    @Column
     public String quizName;
     @Column
     public String question;
@@ -28,6 +30,4 @@ public class Quiz {
     public String answer4;
     @Column
     public String answer;
-    @Column
-    public Long courseId;
 }

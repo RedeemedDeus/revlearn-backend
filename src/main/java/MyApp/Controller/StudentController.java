@@ -62,4 +62,14 @@ public class StudentController {
     public List<Courses> getCoursesByStudent(@PathVariable long id){
         return studentService.getCoursesByStudent(id);
     }
+
+    /**
+     * 5. A student should be able to drop a course if they want
+     * GET localhost:9000/student/{id}/course/{id}/drop
+     */
+    @DeleteMapping("student/{sid}/course/{cid}")
+    public boolean dropCourse(@PathVariable long sid, @PathVariable long cid) {
+        return studentService.dropCourse(sid,cid);
+    }
+
 }

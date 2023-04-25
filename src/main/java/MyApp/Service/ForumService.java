@@ -13,6 +13,7 @@ public class ForumService {
     public ForumService(ForumRepository forumRepository){
         this.forumRepository = forumRepository;
     }
+
     public Forum addForum(Forum forum) {
         return forumRepository.save(forum);
     }

@@ -82,4 +82,19 @@ public class StudentService {
         Student student = studentRepository.findById(id).get();
         return student.getMyCourses();
     }
+
+    public boolean dropCourse(long sid, long cid) {
+        Student student = studentRepository.findById(sid).get();
+        Courses course = courseRepository.findById(cid).get();
+
+        if(student.getMyCourses().contains(course)){
+            student.getMyCourses().remove(course);
+            studentRepository.save(student);
+            return true;
+        }
+        else{
+            return false;
+        }
+
+    }
 }

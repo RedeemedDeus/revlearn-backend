@@ -19,7 +19,7 @@ public class Forum {
     @Column
     private int courseId;
     @Column
-    private int user_Id;
+    private int userId;
     @Column
     private String textBody;
     @Column
