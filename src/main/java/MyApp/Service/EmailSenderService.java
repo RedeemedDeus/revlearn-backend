@@ -28,7 +28,7 @@ public class EmailSenderService {
         System.out.print("Mail Send...");
     }
 
-    protected void sendVerificationEmail(Login login) throws MessagingException, UnsupportedEncodingException, jakarta.mail.MessagingException {
+    /*protected void sendVerificationEmail(Login login) throws MessagingException, UnsupportedEncodingException, jakarta.mail.MessagingException {
         String toAddress = login.getEmail();
         String fromAddress = "revlearnteam@gmail.com";
         String senderName = "RevLearn";
@@ -50,7 +50,7 @@ public class EmailSenderService {
        mailSender.send(message);
         System.out.print("Verification Send...");
 
-    }
+    }*/
 
     protected  void sendPasswordReset(Login login, String randomCode) throws MessagingException, UnsupportedEncodingException, jakarta.mail.MessagingException {
         String toAddress = login.getEmail();
