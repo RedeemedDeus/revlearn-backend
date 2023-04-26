@@ -28,29 +28,29 @@ public class EmailSenderService {
         System.out.print("Mail Send...");
     }
 
-    /*protected void sendVerificationEmail(Login login) throws MessagingException, UnsupportedEncodingException, jakarta.mail.MessagingException {
-        String toAddress = login.getEmail();
-        String fromAddress = "revlearnteam@gmail.com";
-        String senderName = "RevLearn";
-        String subject = "Welcome to RevLearn!";
-        String content = "Welcome to RevLearn!<br>"
-                + "Please login and update your Profile.<br>"
-                + "Thank you,<br>"
-                + "RevLearn Team.";
-
-        MimeMessage message = mailSender.createMimeMessage();
-        MimeMessageHelper helper = new MimeMessageHelper(message);
-
-        helper.setFrom(fromAddress, senderName);
-        helper.setTo(toAddress);
-        helper.setSubject(subject);
-
-
-       helper.setText(content, true);
-       mailSender.send(message);
-        System.out.print("Verification Send...");
-
-    }*/
+//    protected void sendVerificationEmail(Login login) throws MessagingException, UnsupportedEncodingException, jakarta.mail.MessagingException {
+//        String toAddress = login.getEmail();
+//        String fromAddress = "revlearnteam@gmail.com";
+//        String senderName = "RevLearn";
+//        String subject = "Welcome to RevLearn!";
+//        String content = "Welcome to RevLearn!<br>"
+//                + "Please login and update your Profile.<br>"
+//                + "Thank you,<br>"
+//                + "RevLearn Team.";
+//
+//        MimeMessage message = mailSender.createMimeMessage();
+//        MimeMessageHelper helper = new MimeMessageHelper(message);
+//
+//        helper.setFrom(fromAddress, senderName);
+//        helper.setTo(toAddress);
+//        helper.setSubject(subject);
+//
+//
+//       helper.setText(content, true);
+//       mailSender.send(message);
+//        System.out.print("Verification Send...");
+//
+//    }
 
     protected  void sendPasswordReset(Login login, String randomCode) throws MessagingException, UnsupportedEncodingException, jakarta.mail.MessagingException {
         String toAddress = login.getEmail();

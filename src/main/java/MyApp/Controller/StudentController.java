@@ -72,4 +72,13 @@ public class StudentController {
         return studentService.dropCourse(sid,cid);
     }
 
+    /**
+     * 6. A student can pay off their balance
+     * PATCH localhost:9000/student/{id}/pay
+     */
+    @PatchMapping("student/{id}/pay")
+    public Student payBalance(@PathVariable long id) {
+        return studentService.payBalance(id);
+    }
+
 }
