@@ -43,25 +43,26 @@ class GradebookControllerTest {
 
     @Test
     void addGradebookTest() throws Exception {
-        Gradebook gradebook = new Gradebook(1, 1, "test", 80);
+        Gradebook gradebook = new Gradebook(1, 1, "test", 0, 80);
         when(gradebookService.addGradebook(any(Gradebook.class))).thenReturn(gradebook);
 
         mockMvc.perform(MockMvcRequestBuilders.post("/gradebook")
-                        .content("{ \"studentId\": 1, \"quizName\": 1, \"grades\": 80 }")
+                        .content("{ \"studentId\": 1, \"quizName\": \"test\", \"courseId\": 0, \"grades\": 80 }")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.gradeId").value(1))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.studentId").value(1))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.quizName").value("test"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.courseId").value(0))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.grades").value(80));
     }
 
 
     @Test
-    void getAllGradebooksByCourseIdTest() throws Exception {
+    void getAllGradebooksByStudentIdTest() throws Exception {
         List<Gradebook> gradebooks = new ArrayList<>();
-        gradebooks.add(new Gradebook(1, 1, "test", 80));
-        gradebooks.add(new Gradebook(2, 1, "test", 90));
+        gradebooks.add(new Gradebook(1, 1, "test1", 0, 80));
+        gradebooks.add(new Gradebook(2, 1, "test2", 0, 90));
         when(gradebookService.getAllGradebooksByStudentId(1)).thenReturn(gradebooks);
 
         mockMvc.perform(MockMvcRequestBuilders.get("/gradebooks/1")
@@ -69,17 +70,19 @@ class GradebookControllerTest {
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.[0].gradeId").value(1))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.[0].studentId").value(1))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.[0].quizName").value("test"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.[0].quizName").value("test1"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.[0].courseId").value(0))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.[0].grades").value(80))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.[1].gradeId").value(2))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.[1].studentId").value(1))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.[1].quizName").value("test"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.[1].quizName").value("test2"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.[1].courseId").value(0))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.[1].grades").value(90));
     }
 
     @Test
     void testUpdateGradebook() throws Exception {
-        Gradebook gradebook = new Gradebook(1, 1, "test", 90);
+        Gradebook gradebook = new Gradebook(1, 1, "test", 0, 90);
         when(gradebookService.addGradebook(any(Gradebook.class))).thenReturn(gradebook);
         when(gradebookService.getAllGradebooksByStudentId(1)).thenReturn(List.of(gradebook));
         mockMvc.perform(MockMvcRequestBuilders.post("/gradebook")
@@ -98,9 +101,9 @@ class GradebookControllerTest {
 
     @Test
     void testGetAllGradebooksByStudentId() throws Exception {
-        Gradebook gradebook1 = new Gradebook(1, 1, "test", 90);
-        Gradebook gradebook2 = new Gradebook(2, 1, "test", 80);
-        Gradebook gradebook3 = new Gradebook(3, 2, "test", 70);
+        Gradebook gradebook1 = new Gradebook(1, 1, "test", 1, 90);
+        Gradebook gradebook2 = new Gradebook(2, 1, "test", 1, 80);
+        Gradebook gradebook3 = new Gradebook(3, 2, "test", 2, 70);
         List<Gradebook> gradebooks = Arrays.asList(gradebook1, gradebook2);
         when(gradebookService.getAllGradebooksByStudentId(1)).thenReturn(gradebooks);
         mockMvc.perform(MockMvcRequestBuilders.get("/gradebooks/1"))
