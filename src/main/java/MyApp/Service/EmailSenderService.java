@@ -19,7 +19,7 @@ public class EmailSenderService {
     public void sendEmail(String toEmail, String body, String subject) {
         SimpleMailMessage message = new SimpleMailMessage();
 
-        message.setFrom("revlearnteam@gmail.com");
+        message.setFrom("revlearnofficial@gmail.com");
         message.setTo(toEmail);
         message.setText(body);
         message.setSubject(subject);
@@ -28,33 +28,33 @@ public class EmailSenderService {
         System.out.print("Mail Send...");
     }
 
-//    protected void sendVerificationEmail(Login login) throws MessagingException, UnsupportedEncodingException, jakarta.mail.MessagingException {
-//        String toAddress = login.getEmail();
-//        String fromAddress = "revlearnteam@gmail.com";
-//        String senderName = "RevLearn";
-//        String subject = "Welcome to RevLearn!";
-//        String content = "Welcome to RevLearn!<br>"
-//                + "Please login and update your Profile.<br>"
-//                + "Thank you,<br>"
-//                + "RevLearn Team.";
-//
-//        MimeMessage message = mailSender.createMimeMessage();
-//        MimeMessageHelper helper = new MimeMessageHelper(message);
-//
-//        helper.setFrom(fromAddress, senderName);
-//        helper.setTo(toAddress);
-//        helper.setSubject(subject);
-//
-//
-//       helper.setText(content, true);
-//       mailSender.send(message);
-//        System.out.print("Verification Send...");
-//
-//    }
+    protected void sendVerificationEmail(Login login) throws MessagingException, UnsupportedEncodingException, jakarta.mail.MessagingException {
+        String toAddress = login.getEmail();
+        String fromAddress = "revlearnofficial@gmail.com";
+        String senderName = "RevLearn";
+        String subject = "Welcome to RevLearn!";
+        String content = "Welcome to RevLearn!<br>"
+                + "Please login and update your Profile.<br>"
+                + "Thank you,<br>"
+                + "RevLearn Team.";
+
+        MimeMessage message = mailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(message);
+
+        helper.setFrom(fromAddress, senderName);
+        helper.setTo(toAddress);
+        helper.setSubject(subject);
+
+
+       helper.setText(content, true);
+       mailSender.send(message);
+        System.out.print("Verification Send...");
+
+    }
 
     protected  void sendPasswordReset(Login login, String randomCode) throws MessagingException, UnsupportedEncodingException, jakarta.mail.MessagingException {
         String toAddress = login.getEmail();
-        String fromAddress = "revlearnteam@gmail.com";
+        String fromAddress = "revlearnofficial@gmail.com";
         String senderName = "RevLearn";
         String subject = "RevLearn Password Reset";
         String content = "Dear [[name]], <br>"
