@@ -7,8 +7,10 @@ INSERT INTO student (firstname, lastname, address, phone_number, dob, balance, l
  -- Insert login data
  INSERT INTO login (email, password, user_type, status, student_id) VALUES
    ('john.doe@example.com', '$2a$12$P8DZF/JoYWA3YTiYqXxPBew4yuiP25G74x0/Te.3oGQoQ8GcP5tLG', 'student', 'active', 1),
-   ('jane.doe@example.com', '$2a$12$P8DZF/JoYWA3YTiYqXxPBew4yuiP25G74x0/Te.3oGQoQ8GcP5tLG', 'student', 'active', 2);
-   --(3, 'educator@example.com', 'password', 'educator', 'active');
+   ('isabella.davis@example.com', '$2a$12$P8DZF/JoYWA3YTiYqXxPBew4yuiP25G74x0/Te.3oGQoQ8GcP5tLG', 'student', 'active', 11),
+   ('amy.smith@example.com', '$2a$12$P8DZF/JoYWA3YTiYqXxPBew4yuiP25G74x0/Te.3oGQoQ8GcP5tLG', 'student', 'active', 3),
+   ('brian.johnson@example.com', '$2a$12$P8DZF/JoYWA3YTiYqXxPBew4yuiP25G74x0/Te.3oGQoQ8GcP5tLG', 'student', 'active', 4),
+
 
 -- Insert course data
 INSERT INTO courses (educator_id, name, keywords, category, course_level, description, cost) VALUES
@@ -68,36 +70,22 @@ INSERT INTO quiz (quiz_name, question, answer1, answer2, answer3, answer4, answe
 
 -- Insert gradebook data
 INSERT INTO gradebook (student_id, course_id, quiz_name, grades) VALUES
-(1,1,'Fundamentals of IT Quiz 2', 85),
-(2,2,'Fundamentals of IT Quiz 1', 72),
-(3,3,'Algorithm Design Quiz 2', 91),
-(4,4,'Algorithm Design Quiz 1', 68),
-(5,5,'Principles of Cyber Security Quiz 1', 95),
-(1,1,'Introduction to Computer Science Quiz 1', 88),
-(2,2,'Algorithm Design Quiz 2', 80),
-(3,3,'Fundamentals of IT Quiz 1', 62),
-(4,4,'Principles of Cyber Security Quiz 1', 90),
-(5,5,'Introduction to Computer Science Quiz 1', 78),
-(1,1,'Algorithm Design Quiz 1', 75),
-(2,2,'Principles of Cyber Security Quiz 1', 98),
-(3,3,'Introduction to Computer Science Quiz 1', 82),
-(4,4,'Fundamentals of IT Quiz 2', 89),
-(5,5,'Algorithm Design Quiz 2', 83),
-(1,1,'Principles of Cyber Security Quiz 1', 93),
-(2,2,'Introduction to Computer Science Quiz 1', 77),
-(3,3,'Algorithm Design Quiz 1', 70),
-(4,4,'Introduction to Computer Science Quiz 1', 81),
-(5,5,'Fundamentals of IT Quiz 1', 65),
-(1,1,'Algorithm Design Quiz 2', 87),
-(2,2,'Fundamentals of IT Quiz 2', 78),
-(3,3,'Principles of Cyber Security Quiz 1', 96),
-(4,4,'Algorithm Design Quiz 1', 73),
-(5,5,'Introduction to Computer Science Quiz 1', 79),
-(1,1,'Fundamentals of IT Quiz 1', 70),
-(2,2,'Algorithm Design Quiz 2', 84),
-(3,3,'Introduction to Computer Science Quiz 1', 85),
-(4,4,'Principles of Cyber Security Quiz 1', 88),
-(5,5,'Algorithm Design Quiz 1', 71);
+(5,1,'Foundations of Computing', 85),
+(5,1,'Programming Fundamentals', 62),
+(5,1,'Data Structures and Algorithms', 91),
+(5,1,'Computer Architecture and Operating Systems', 93),
+(5,1,'Introduction to Artificial Intelligence', 75),
+(5,2,'Introduction to Cybersecurity Quiz 2', 99),
+(5,2,'Network Security Quiz 2', 63),
+(5,2,'Security Risk Management Quiz 2', 77),
+(5,2,'Cryptography and Data Protection Quiz 2', 69),
+(5,2,'Penetration Testing and Ethical Hacking Quiz 2', 85),
+(5,3,'Introduction to Algorithmic Thinking', 85),
+(5,3,'Divide and Conquer Algorithms', 82),
+(5,3,'Dynamic Programming and Memoization', 77),
+(5,3,'Greedy Algorithms and Heuristics', 93),
+(5,3,'Graph Algorithms and Network Flows', 82);
+
 
 -- Insert forum post data
 INSERT INTO forum (course_id, user_id, text_body, created_at) VALUES
