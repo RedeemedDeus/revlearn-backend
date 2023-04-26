@@ -52,7 +52,7 @@ public class LoginService {
             student = studentRepository.save(student);
             login.setStudent(student);
 
-            //emailSenderService.sendVerificationEmail(login);
+//            emailSenderService.sendVerificationEmail(login);
 
 
             return loginRepository.save(login);
