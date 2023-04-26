@@ -1,15 +1,17 @@
 
 -- Insert student data
 INSERT INTO student (firstname, lastname, address, phone_number, dob, balance, login_id) VALUES
-  ('John', 'Doe', '123 Main St', '123-456-7899', '01-01-1998', 0.0, 1),
-  ('Jane', 'Doe', '456 Elm St', '345-123-3478', '02-02-1999', 0.0, 2);
+  ('John', 'Jones', '123 Main St', '123-456-7899', '01-01-1998', 0.0, 1),
+  ('Isabella', 'Davis', '123 Main St', '123-456-7899', '01-01-1998', 0.0, 2),
+  ('Amy', 'Smith', '123 Main St', '123-456-7899', '01-01-1998', 0.0, 3),
+  ('Brian', 'Johnson', '456 Elm St', '345-123-3478', '02-02-1999', 0.0, 4);
 
  -- Insert login data
  INSERT INTO login (email, password, user_type, status, student_id) VALUES
    ('john.doe@example.com', '$2a$12$P8DZF/JoYWA3YTiYqXxPBew4yuiP25G74x0/Te.3oGQoQ8GcP5tLG', 'student', 'active', 1),
-   ('isabella.davis@example.com', '$2a$12$P8DZF/JoYWA3YTiYqXxPBew4yuiP25G74x0/Te.3oGQoQ8GcP5tLG', 'student', 'active', 11),
+   ('isabella.davis@example.com', '$2a$12$P8DZF/JoYWA3YTiYqXxPBew4yuiP25G74x0/Te.3oGQoQ8GcP5tLG', 'student', 'active', 2),
    ('amy.smith@example.com', '$2a$12$P8DZF/JoYWA3YTiYqXxPBew4yuiP25G74x0/Te.3oGQoQ8GcP5tLG', 'student', 'active', 3),
-   ('brian.johnson@example.com', '$2a$12$P8DZF/JoYWA3YTiYqXxPBew4yuiP25G74x0/Te.3oGQoQ8GcP5tLG', 'student', 'active', 4),
+   ('brian.johnson@example.com', '$2a$12$P8DZF/JoYWA3YTiYqXxPBew4yuiP25G74x0/Te.3oGQoQ8GcP5tLG', 'student', 'active', 4);
 
 
 -- Insert course data
