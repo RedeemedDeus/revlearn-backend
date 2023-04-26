@@ -68,7 +68,7 @@ public class StudentController {
      * GET localhost:9000/student/{id}/course/{id}/drop
      */
     @DeleteMapping("student/{sid}/course/{cid}")
-    public boolean dropCourse(@PathVariable long sid, @PathVariable long cid) {
+    public Student dropCourse(@PathVariable long sid, @PathVariable long cid) {
         return studentService.dropCourse(sid,cid);
     }
 
