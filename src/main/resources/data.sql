@@ -8,7 +8,7 @@ INSERT INTO student (firstname, lastname, address, phone_number, dob, balance, l
 
  -- Insert login data
  INSERT INTO login (email, password, user_type, status, student_id) VALUES
-   ('john.doe@example.com', '$2a$12$P8DZF/JoYWA3YTiYqXxPBew4yuiP25G74x0/Te.3oGQoQ8GcP5tLG', 'student', 'active', 1),
+   ('john.jones@example.com', '$2a$12$P8DZF/JoYWA3YTiYqXxPBew4yuiP25G74x0/Te.3oGQoQ8GcP5tLG', 'student', 'active', 1),
    ('isabella.davis@example.com', '$2a$12$P8DZF/JoYWA3YTiYqXxPBew4yuiP25G74x0/Te.3oGQoQ8GcP5tLG', 'student', 'active', 2),
    ('amy.smith@example.com', '$2a$12$P8DZF/JoYWA3YTiYqXxPBew4yuiP25G74x0/Te.3oGQoQ8GcP5tLG', 'student', 'active', 3),
    ('brian.johnson@example.com', '$2a$12$P8DZF/JoYWA3YTiYqXxPBew4yuiP25G74x0/Te.3oGQoQ8GcP5tLG', 'student', 'active', 4);
